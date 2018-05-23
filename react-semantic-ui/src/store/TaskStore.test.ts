@@ -35,11 +35,10 @@ describe('TaskStore', () => {
         expect(remainingTask.body).toBe('body1');
     });
 
-    it('should update task', () => {
+    it('should toggle completed', () => {
         store.addTask('title1', 'body1');
-        store.updateTask({...store.tasks[0], title: 't', body: 'b'});
-        expect(store.tasks[0].title).toBe('t');
-        expect(store.tasks[0].body).toBe('b');
+        store.toggleCompleted(store.tasks[0]);
+        expect(store.tasks[0]).toEqual({...store.tasks[0], isCompleted: true});
     });
 
 });

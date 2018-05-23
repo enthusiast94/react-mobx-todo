@@ -1,19 +1,26 @@
-import * as React from 'react';
-import './App.css';
+import * as React from "react";
+import { TaskList } from "./components/TaskList";
+import TaskStore from "./store/TaskStore";
+import "./App.css";
+import { Container, Header } from "semantic-ui-react";
+import { observer } from "mobx-react";
 
-import logo from './logo.svg';
+interface AppProps {
+  taskStore: TaskStore;
+}
 
-class App extends React.Component {
+@observer
+class App extends React.Component<AppProps, {}> {
   public render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+      <div>
+        <Container>
+          <br />
+          <Header as="h1" textAlign="center" block>
+            {`Pending Tasks: ${this.props.taskStore.getPendingTaskCount}`}
+          </Header>
+          <TaskList taskStore={this.props.taskStore} />
+        </Container>
       </div>
     );
   }
