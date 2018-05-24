@@ -11,6 +11,7 @@ describe("<App/>", () => {
     const store = new TaskStore();
     const wrapper = mount(<App taskStore={store} />);
     expect(wrapper.find(TaskItem).length).toBe(0);
+    expect(wrapper.find('.no-tasks-found-text').length).toBe(1);
     expect(wrapper.find(Header).text()).toBe("Pending Tasks: 0");
   });
 
@@ -25,6 +26,7 @@ describe("<App/>", () => {
     expect(taskItem.find(List.Description).text()).toBe('body');
     expect(taskItem.find(List.Icon).props().name).toBe('square outline');
     expect(wrapper.find(Header).text()).toBe("Pending Tasks: 1");
+    expect(wrapper.find('.no-tasks-found-text').length).toBe(0);
   });
 
   it('should toggle task completion when clicked', () => {

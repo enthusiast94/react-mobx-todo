@@ -17,7 +17,8 @@ export class TaskList extends React.Component<TaskListProps, {}> {
     
     return (
       <List divided relaxed selection size="huge">
-        {tasks}
+        {tasks.length > 0 && tasks}
+        {tasks.length === 0 && <div className="no-tasks-found-text" style={{textAlign: 'center'}}>No tasks found</div>}
       </List>
     );
   }
