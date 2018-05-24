@@ -1,6 +1,6 @@
 import { mount } from "enzyme";
 import * as React from "react";
-import App, { AppProps } from "./App";
+import App from "./App";
 import TaskStore from "./store/TaskStore";
 import { TaskItem } from "./components/TaskItem";
 import { Header, List } from "semantic-ui-react";

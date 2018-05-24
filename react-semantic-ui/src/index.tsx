@@ -22,7 +22,7 @@ const initialTasks: Task[] = [
     "Just a body maybe?",
     Date.now(),
     Date.now(),
-    true
+    false
   ),
   new Task(
     "3",
