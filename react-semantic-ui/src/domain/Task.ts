@@ -7,7 +7,7 @@ export default class Task {
   @observable public createdAt: number;
   @observable public updatedAt: number;
   @observable public isCompleted: boolean;
-  
+
   public constructor(
     id: string,
     title: string,

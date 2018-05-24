@@ -29,7 +29,7 @@ export class TaskItem extends React.Component<TaskItemProps, {}> {
         />
         <List.Content>
           <List.Header>{this.task.title}</List.Header>
-          {this.task.body}
+          <List.Description>{this.task.body}</List.Description>
         </List.Content>
       </List.Item>
     );
