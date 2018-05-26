@@ -4,6 +4,7 @@ import TaskStore from "./store/TaskStore";
 import "./App.css";
 import { Container, Header } from "semantic-ui-react";
 import { observer } from "mobx-react";
+import { AddTask } from "./components/AddTask";
 
 export interface AppProps {
   taskStore: TaskStore;
@@ -20,6 +21,7 @@ class App extends React.Component<AppProps, {}> {
             {`Pending Tasks: ${this.props.taskStore.getPendingTaskCount}`}
           </Header>
           <TaskList taskStore={this.props.taskStore} />
+          <AddTask taskStore={this.props.taskStore} />
         </Container>
       </div>
     );
