@@ -24,8 +24,7 @@ export class TaskItem extends React.Component<TaskItemProps, {}> {
     return (
       <List.Item key={this.task.id} onClick={this.toggleTaskCompleted}>
         <List.Content floated="right">
-          <Button size="small">Edit</Button>
-          <Button secondary size="small" onClick={this.deleteTask}>Delete</Button>
+          <Button size="small" onClick={this.deleteTask}>Delete</Button>
         </List.Content>
         <List.Icon
           name={this.task.isCompleted ? "checkmark box" : "square outline"}
