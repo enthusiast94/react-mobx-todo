@@ -41,15 +41,15 @@ export class AddTask extends React.Component<AddTaskProps, AddTaskState> {
               <Form.Input
                 placeholder="Title"
                 value={this.state.title}
-                onChange={e =>
-                  this.setState({ ...this.state, title: e.currentTarget.value })
+                onChange={(e, {value}) =>
+                  this.setState({ ...this.state, title: value })
                 }
               />
               <Form.TextArea
                 placeholder="Body"
                 value={this.state.body}
-                onChange={e =>
-                  this.setState({ ...this.state, body: e.currentTarget.value })
+                onChange={(e, {value}) =>
+                  value && this.setState({ ...this.state, body: value.toString() })
                 }
               />
             </Form>
